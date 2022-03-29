@@ -99,3 +99,22 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true
+})
+
+scrollReveal.reveal('.home_title, .popular_container, .features_img, .featured_filters')
+scrollReveal.reveal('.home_subtitle', {delay: 500})
+scrollReveal.reveal('.home_elec', {delay: 600})
+scrollReveal.reveal('.home_img', {delay: 800})
+scrollReveal.reveal('.home_car_data', {delay: 900, interval: 100, origin: 'bottom'})
+scrollReveal.reveal('.home_button', {delay: 1000, origin: 'bottom'})
+scrollReveal.reveal('.about_group, .offer_data', {origin: 'left'})
+scrollReveal.reveal('.origin_data, .offer_img', {origin: 'right'})
+scrollReveal.reveal('.features_map', {delay:600,origin: 'bottom'})
+scrollReveal.reveal('.features_card', {interval: 300})
+scrollReveal.reveal('.featured_card, .logos_content, .footer_content', {interval: 300})
