@@ -74,9 +74,28 @@ function activeFeatured() {
 linkFeatured.forEach(link=>link.addEventListener('click',activeFeatured))
 
 /*=============== SHOW SCROLL UP ===============*/ 
+function scrollTop() {
+    const scrollBtn = document.querySelector("#scrollUp")
+    this.scrollY >= 350 ? scrollBtn.classList.add('show-scroll') : scrollBtn.classList.remove('show-scroll')
+}
 
+window.addEventListener('scroll', scrollTop)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
+const sections = document.querySelectorAll('section[id]')
+function scrollActive() {
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 58
+        const sectionId = current.getAttribute('id')
+        const sectionLink = document.querySelector('.nav_menu a[href*=' + sectionId +']')
+        scrollY > sectionTop && scrollY <= sectionTop + sectionHeight ? sectionLink.classList.add('active-link') : sectionLink.classList.remove('active-link')
+    })
+}
+
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
